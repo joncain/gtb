@@ -1,10 +1,15 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/style.css">
 <title><MACRO:TITLE></title>
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
@@ -13,42 +18,34 @@ $(document).ready(function()
 {
 	//////////////////////////////////////////////////////////////
 	//
-	// Clone nav to footer
-	//
-	$("#footerNav").html($("#nav").clone());
-
-	//////////////////////////////////////////////////////////////
-	//
 	// Assign nav click handlers
 	//
-	$.each($(".menuItem"), function()
-	{
-		$(this).click(function()
+	$(".menuItem").click(function()
 		{
-			window.location = "index.php?page=" + this.id;
-		});
+			window.location = "?page=" + this.id;
 	});
+
+	$(".menuItem").removeClass("active");
+	$("#<MACRO:PAGE>").addClass("active");
 });
 </script>
 </head>
 <body>
 
 	<header>
-		<nav id="nav">
-				<ul style="border:dashed 0px green; padding:0px;">
-					<li class="menuItem" id="welcome">Welcome</li>
-					<li class="menuItem" id="healing">Healing</li>
-					<li class="menuItem" id="videos">Videos</li>
-					<li class="menuItem" id="newsletter" style="display:none;">Newsletter</li>
-					<li class="menuItem" id="fgf">FGF</li>
-					<li class="menuItem" id="aminoacids">Amino Acids</li>
-					<li class="menuItem" id="opportunity">Opportunity</li>
-					<li class="menuItem" id="studies" style="display:;">Studies</li>
-					<li class="menuItem" id="products">Products</li>
-				</ul>
-	</nav>
+    <nav>
+      <ul class="nav">
+        <li id="welcome" class="menuItem"><a><span>Welcome</span></a></li>
+        <li id="healing" class="menuItem"><a>Healing</a></li>
+        <li id="videos" class="menuItem"><a>Videos</a></li>
+        <li id="fgf" class="menuItem"><a>FGF</a></li>
+        <li id="aminoacids" class="menuItem"><a>Amino Acids</a></li>
+        <li id="opportunity" class="menuItem"><a>Opportunity</a></li>
+        <li id="studies" class="menuItem"><a>Studies</a></li>
+        <li id="products" class="menuItem"><a>Products</a></li>
+      </ul>
+    </nav>
 	</header>
-
 
 	<section class="pageContent">
 
@@ -57,13 +54,12 @@ $(document).ready(function()
 	</section>
 
 	<footer>
-		<div id="footerNav" style="clear:both;"></div>
-
 		<div class="disclaimer textShadow">
 This is an Independent Lifepharm Global&copy; Consultant Website and NOT a Company website. All information and opinions expressed on this site are that of the consultant and not endorsed by the company. No income is guaranteed or implied as an Independent Consultant. Laminine&reg; is not intended to prevent or cure any disease, illness, or condition. If you have concerns please consult your physician. Laminine&reg; is a Registered Trademark of Lifepharm Global &copy;
 		<div>
 
 	</footer>
+
 
 
 </body>

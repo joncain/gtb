@@ -6,33 +6,6 @@
     color: #FFFFFF;
 }
 
-.menuItem {
-    border: solid #000000 4px;
-    background-color: #EB7900;
-    padding: 2px;
-    cursor: pointer;
-    width: 115px;
-    height: 22px;
-    line-height: 22px;
-    font-size: 14px;
-    font-weight:bold;
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, .8);
-    float: left;
-    display: inline;
-    text-align:center;
-    white-space:nowrap;
-    overflow:hidden;
-}
-
-nav {
-    list-style: none;
-    margin:0 auto;
-    /*width:900px;*/
-    width:1024px;
-    border:dashed 0px magenta;
-    padding-left:5px;
-}
-
 .pageTitle {
     font-size:24pt;
     font-weight:bold;
@@ -51,10 +24,9 @@ nav {
 }
 
 .pageContent {
-    padding:20px 0px 20px 0px;
+    padding: 0px;
     margin: 0 auto;
-    /*width:900px;*/
-    width:1024px;
+    width: 1024px;
     border: dashed 0px cyan;
     clear:both;
 }
