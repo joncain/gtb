@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title><MACRO:TITLE></title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+$(document).ready(function()
+{
+	//////////////////////////////////////////////////////////////
+	//
+	// Clone nav to footer
+	//
+	$("#footerNav").html($("#nav").clone());
+
+	//////////////////////////////////////////////////////////////
+	//
+	// Assign nav click handlers
+	//
+	$.each($(".menuItem"), function()
+	{
+		$(this).click(function()
+		{
+			window.location = "index.php?page=" + this.id;
+		});
+	});
+});
+</script>
+</head>
+<body>
+
+	<header>
+		<nav id="nav">
+				<ul style="border:dashed 0px green; padding:0px;">
+					<li class="menuItem" id="welcome">Welcome</li>
+					<li class="menuItem" id="healing">Healing</li>
+					<li class="menuItem" id="videos">Videos</li>
+					<li class="menuItem" id="newsletter" style="display:none;">Newsletter</li>
+					<li class="menuItem" id="fgf">FGF</li>
+					<li class="menuItem" id="aminoacids">Amino Acids</li>
+					<li class="menuItem" id="opportunity">Opportunity</li>
+					<li class="menuItem" id="studies" style="display:;">Studies</li>
+					<li class="menuItem" id="products">Products</li>
+				</ul>
+	</nav>
+	</header>
+
+
+	<section class="pageContent">
+
+		<MACRO:MAINCONTENT>
+
+	</section>
+
+	<footer>
+		<div id="footerNav" style="clear:both;"></div>
+
+		<div class="disclaimer textShadow">
+This is an Independent Lifepharm Global&copy; Consultant Website and NOT a Company website. All information and opinions expressed on this site are that of the consultant and not endorsed by the company. No income is guaranteed or implied as an Independent Consultant. Laminine&reg; is not intended to prevent or cure any disease, illness, or condition. If you have concerns please consult your physician. Laminine&reg; is a Registered Trademark of Lifepharm Global &copy;
+		<div>
+
+	</footer>
+
+
+</body>
+</html>

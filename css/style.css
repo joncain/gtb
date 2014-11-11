@@ -1,0 +1,83 @@
+﻿body {
+    background: url(../images/wood.jpg) repeat;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+    color: #FFFFFF;
+}
+
+.menuItem {
+    border: solid #000000 4px;
+    background-color: #EB7900;
+    padding: 2px;
+    cursor: pointer;
+    width: 115px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight:bold;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, .8);
+    float: left;
+    display: inline;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+nav {
+    list-style: none;
+    margin:0 auto;
+    /*width:900px;*/
+    width:1024px;
+    border:dashed 0px magenta;
+    padding-left:5px;
+}
+
+.pageTitle {
+    font-size:24pt;
+    font-weight:bold;
+    border-bottom:solid 2px #EB7900 !important;
+    color:#EB7900;
+    text-align:center;
+}
+
+.disclaimer {
+    width: 500px;
+    font-size: 9pt;
+    border: dotted 0px yellow;
+    clear: both;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.pageContent {
+    padding:20px 0px 20px 0px;
+    margin: 0 auto;
+    /*width:900px;*/
+    width:1024px;
+    border: dashed 0px cyan;
+    clear:both;
+}
+
+.pageContentSectionHeader {
+	font-size: 14pt;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.pageContentTitle {
+	font-weight: bold;
+	font-size: 11pt;
+}
+
+.pageContentTitle, .pageContentText {
+	margin-left: 10px;
+}
+
+.pageContentReadableBackground {
+    background-color: rgba(59,23,11,.5);
+}
+
+.textShadow {
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, .8);
+}

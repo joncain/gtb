@@ -1,0 +1,125 @@
+﻿<script src="js/healing.js"></script>
+
+<script>
+
+	$(document).ready(function ()
+	{
+		var i = 0;
+		$.each(links, function (index, element)
+		{
+			var className = "healingLink";
+
+			if (i % 2 > 0)
+			{
+				className += "Alt";
+			}
+
+			var template = $("#linkTemplate").html();
+			template = template.replace(/\[TITLE\]/g, element.title);
+			template = template.replace(/\[GUID\]/g, index);
+			template = template.replace(/\[CLASS\]/g, className);
+			$("#linkContainer").append(template);
+
+			i++;
+		});
+
+		///////////////////////////////////////////////////////////////////////////////////
+		//
+		// Set link container height to 110% of the content height
+		//
+		var height = parseInt($("#linkTemplate").css("height").replace("px", ""));
+		var rows = Math.ceil(Object.keys(links).length / 3);
+		var newHeight = (height * rows) + parseInt($("#linkContainer").css("height").replace("px"));
+		$("#linkContainer").css("height", newHeight * 1.2);
+
+	});
+
+	function getContent(guid)
+	{
+		$("#healingContent").html(links[guid].content);
+		$("#healingContainer").show(400);
+	}
+
+</script>
+
+<style>
+	.healingLink, .healingLinkAlt {
+		width: 230px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		margin: 3px;
+		border: dashed 0px orange;
+		float: left;
+		color: rgb(255, 255, 255);
+		font-weight: bold;
+		font-size: 9pt;
+		white-space: nowrap;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.healingLink {
+		background-color: rgba(0, 0, 0, .7);
+	}
+
+	.healingLinkAlt {
+		background-color: rgba(0, 0, 0, .5);
+	}
+
+	#healingContainer {
+		border: solid 0px black;
+		border-radius: 10px;
+		box-shadow: 10px 10px 13px black;
+		width: 500px;
+		height: 400px;
+		position: relative;
+		top: -780px;
+		left: 220px;
+		padding: 10px 20px 10px 20px;
+		margin: 20px;
+		font-size: 10pt;
+		font-family: Arial;
+		color: #FFFFFF;
+		background-color: #000000;
+		z-index:1000;
+		overflow: auto;
+		clear: both;
+	}
+
+	#healingClose {
+		float: right;
+		position: relative;
+		margin: 0px 0px 30px 20px;
+		cursor: pointer;
+		font-weight: bold;
+		color: red;
+		font-size: 16pt;
+		width: 20px;
+		border-radius: 45px;
+		border: solid 2px white;
+		text-align: center;
+	}
+</style>
+
+<div class="pageContentReadableBackground">
+
+	<div class="pageTitle pageContent textShadow">Wound Healing</div>
+
+	<div style="text-align: center;">
+		<img style="border: dashed 0px indigo;" src="images/fgf/laminine.png" /></div>
+
+	<div style="width: 100%; border: dashed 0px red; text-align: center; padding-bottom: 20px; color: rgb(0, 255, 33); font-size: 20pt;" class="statement textShadow">- Click the links below -</div>
+
+	<div id="linkContainer" style="position: relative; left: 150px; width: 730px; border: dashed 0px yellow;"></div>
+
+</div>
+
+<div id="linkTemplate" style="display: none;" class="healingLink">
+	<div class="[CLASS] textShadow" onclick="getContent('[GUID]');">[TITLE]</div>
+</div>
+
+<div id="healingContainer" onclick="$('#healingContainer').hide(400);" title="Close" style="display: none;" class="pageContent">
+	<div id="healingClose" >X</div>
+	<span id="healingContent"></span>
+</div>
