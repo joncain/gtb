@@ -12,6 +12,7 @@ if (isset($_GET["page"]) && file_exists("templates/" . $_GET["page"] . ".html"))
 
 $pageContent = new template("templates/$page.html");
 
+$template->assign("PAGE", $_GET["page"]);
 $template->assign("MAINCONTENT", $pageContent->template);
 
 $template->parse();
